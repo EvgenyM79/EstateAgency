@@ -29,22 +29,14 @@ public class Passport implements Serializable{
     @Column(name = "n_room")
     private int n_room;
 
-    @OneToOne(mappedBy = "passport")
-    private Parents parent;
-
-    @Embedded
-    @AttributeOverrides({ @AttributeOverride(name = "street", column = @Column(name = "as_area", insertable = false, updatable = false, nullable = false)) })
-    private AreaStreet areaStreet;
-
     public Passport(){}
 
-    public Passport(String ser_passport, int n_passport, String street, int n_building, int n_room, AreaStreet areaStreet) {
+    public Passport(String ser_passport, int n_passport, String street, int n_building, int n_room) {
         this.ser_passport = ser_passport;
         this.n_passport = n_passport;
         this.street = street;
         this.n_building = n_building;
         this.n_room = n_room;
-        this.areaStreet = areaStreet;
     }
 
     public int getPassport_id() {
@@ -95,25 +87,9 @@ public class Passport implements Serializable{
         this.n_room = n_room;
     }
 
-    public Parents getParent() {
-        return parent;
-    }
-
-    public void setParent(Parents parent) {
-        this.parent = parent;
-    }
-
-    public AreaStreet getAreaStreet() {
-        return areaStreet;
-    }
-
-    public void setAreaStreet(AreaStreet areaStreet) {
-        this.areaStreet = areaStreet;
-    }
-
     @Override
     public String toString(){
-        return "{id : " + passport_id + "} {ser passport : " + ser_passport + "} {n passport : " + n_passport +"}{Район : " + areaStreet.getAs_area() + "}{street : " + street + "}{n building : " + n_building + "}{n room : " + n_room + "}\n";
+        return "{id : " + passport_id + "} {ser passport : " + ser_passport + "} {n passport : " + n_passport + "}{street : " + street + "}{n building : " + n_building + "}{n room : " + n_room + "}\n";
     }
 
 }

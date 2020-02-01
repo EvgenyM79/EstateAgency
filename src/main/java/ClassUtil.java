@@ -4,7 +4,7 @@ import java.util.*;
 public class ClassUtil{
 
     public void startProject() throws SQLException, Exception {
-        try {
+        /*try {
             System.out.println("Создание структуры БД и занесение первоначальной информаци");
             ObjectDAO obj = new ObjectDAO();
             Parents parent1 = new Parents("Иван", "Петров", 36);
@@ -112,6 +112,6 @@ public class ClassUtil{
 
         } catch (Exception e) {
             System.out.println("Ошибка работы с данных:");
-        }
+        }*/
     }
 }

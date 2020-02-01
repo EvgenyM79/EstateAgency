@@ -16,6 +16,7 @@
         <mapping class = "Children"/>
         <mapping class = "AreaStreet"/>
         <mapping class = "EducateBuilding"/>
+        <mapping class = "User"/>
         <mapping class = "Main"/>
     </session-factory>
 </hibernate-configuration>

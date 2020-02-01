@@ -70,7 +70,7 @@ public class ObjectDAO implements IObjectDAO {
 
     //Забор всей информации из таблицы учебные заведения с условием, только по определенному району
     // используется селект
-    @Override
+    /*@Override
     public List<EducateBuilding> getObjFromTable(String nameObj, String val) throws SQLException {
         //String query = "FROM " + nameObj + " WHERE "+ nameObj + ".as_area = " + val;
         String query = "FROM " + nameObj + " WHERE as_area = \'" + val + "\'";
@@ -131,5 +131,5 @@ public class ObjectDAO implements IObjectDAO {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при чтении", JOptionPane.OK_OPTION);
         }
         return eb;
-    }
+    }*/
 }

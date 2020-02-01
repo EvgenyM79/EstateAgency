@@ -10,8 +10,8 @@ public interface IObjectDAO {
     public void merge(Object obj) throws SQLException;
     public void delete(Object obj)  throws SQLException;
     public List getObjFromTable(String nameObj) throws SQLException;
-    public List<EducateBuilding> getObjFromTable(String nameObj, String val) throws SQLException;
-    public Parents findByIdParent(int id);
-    public Children findByIdChild(int id);
-    public EducateBuilding findByIdEducation(int id);
+    //public List<EducateBuilding> getObjFromTable(String nameObj, String val) throws SQLException;
+    //public Parents findByIdParent(int id);
+    //public Children findByIdChild(int id);
+    //public EducateBuilding findByIdEducation(int id);
 }
