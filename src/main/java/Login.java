@@ -18,14 +18,20 @@ import javafx.stage.Stage;
 
 public class Login extends Application {
 
+    private TextField userTextField;
+    private PasswordField pwBox;
+    private Button btnIn, btnOut;
+    private HBox hbBtnIn, hbBtnOut;
+
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Агенство недвижимости");
+        primaryStage.setTitle("   Агенство недвижимости");
         GridPane grid = new GridPane();
+        Scene scene = new Scene(grid, 600, 275);
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
         grid.setVgap(10);
@@ -38,19 +44,19 @@ public class Login extends Application {
         Label userName = new Label("Имя пользователя:");
         grid.add(userName, 0, 1);
 
-        TextField userTextField = new TextField();
+        userTextField = new TextField();
         grid.add(userTextField, 1, 1);
 
         Label pw = new Label("Пароль:");
         grid.add(pw, 0, 2);
 
-        PasswordField pwBox = new PasswordField();
+        pwBox = new PasswordField();
         grid.add(pwBox, 1, 2);
 
-        Button btnIn = new Button("Вход");
-        Button btnOut = new Button("Выход");
-        HBox hbBtnIn = new HBox(10);
-        HBox hbBtnOut = new HBox(10);
+        btnIn = new Button("Вход");
+        btnOut = new Button("Выход");
+        hbBtnIn = new HBox(10);
+        hbBtnOut = new HBox(10);
         hbBtnIn.setAlignment(Pos.BOTTOM_RIGHT);
         hbBtnIn.getChildren().add(btnIn);
         hbBtnOut.setAlignment(Pos.BOTTOM_RIGHT);
@@ -60,14 +66,22 @@ public class Login extends Application {
         grid.add(hbBtnOut, 2, 4);
 
         final Text actiontarget = new Text();
+        final Integer[] numEnter = {0};
         grid.add(actiontarget, 1, 6);
 
         btnIn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
+                numEnter[0] ++;
+                System.out.println(numEnter[0]);
+                if (numEnter[0]==3){
+                    primaryStage.close();
+                }
                 actiontarget.setFill(Color.FIREBRICK);
-                actiontarget.setText("Sign in button pressed");
-
+                actiontarget.setText("Ошибка...");
+                System.out.println(userTextField.getText());
+                System.out.println(pwBox.getText());
+                clearFields();
             }
         });
 
@@ -78,8 +92,14 @@ public class Login extends Application {
             }
         });
 
-        Scene scene = new Scene(grid, 600, 275);
+        //Scene scene = new Scene(grid, 600, 275);
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    private void clearFields() {
+        // TODO Auto-generated method stub
+        userTextField.clear();
+        pwBox.clear();
     }
 }
