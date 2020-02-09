@@ -9,6 +9,8 @@ public class ClassUtil{
             ObjectDAO obj = new ObjectDAO();
             Employee employee = new Employee("Иван", "Петров","Риэлтор","petrov", "petrov");
             obj.save(employee);
+            Clients clients = new Clients("Миша", "Петров", "Куйбышева 46","8922222222","newfist@mail.ru");
+            obj.save(clients);
             /*Parents parent1 = new Parents("Иван", "Петров", 36);
             AreaStreet areaStreet = new AreaStreet("Куйбышева", "Октябрьский");
             Passport passport1 = new Passport("6403", 333234543, "Куйбышева", 57, 7, areaStreet);

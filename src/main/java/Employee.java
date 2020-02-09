@@ -15,23 +15,25 @@ import java.util.List;
 public class Employee implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int employee_id;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "first_name")
     private String first_name;
 
-    @Column(name = "last_Name", nullable = false)
+    @Column(name = "last_Name")
     private String last_name;
 
-    @Column(name = "position", nullable = false)
+    @Column(name = "position")
     private String position;
 
-    @Column(name = "login", nullable = false, unique = true)
+    @Column(name = "login")
     private String login;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password")
     private String password;
+
+    public Employee(){};
 
     public Employee(String first_name, String last_name, String position, String login, String password) {
         this.first_name = first_name;
@@ -40,8 +42,6 @@ public class Employee implements Serializable {
         this.login = login;
         this.password = password;
     }
-
-    public Employee(){};
 
     public int getId() {
         return employee_id;

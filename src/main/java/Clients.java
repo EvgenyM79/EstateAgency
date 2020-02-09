@@ -8,28 +8,30 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "clients")
 
 public class Clients implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int client_id;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "first_name")
     private String first_name;
 
-    @Column(name = "last_Name", nullable = false)
+    @Column(name = "last_Name")
     private String last_name;
 
-    @Column(name = "address", nullable = false)
+    @Column(name = "address")
     private String address;
 
-    @Column(name = "telophonN", nullable = false, unique = true)
+    @Column(name = "telophonN")
     private String telophonN;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email")
     private String email;
+
+    public Clients(){};
 
     public Clients(String first_name, String last_name, String address, String telophonN, String email) {
         this.first_name = first_name;
@@ -38,8 +40,6 @@ public class Clients implements Serializable {
         this.telophonN = telophonN;
         this.email = email;
     }
-
-    public Clients(){};
 
     public int getId() {
         return client_id;
