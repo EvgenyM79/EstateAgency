@@ -11,12 +11,12 @@
         <property name="hbm2ddl.auto">update</property>
         <mapping class = "HibernateUtils"/>
         <mapping class = "ObjectDAO"/>
-        <mapping class = "Parents"/>
-        <mapping class = "Passport"/>
-        <mapping class = "Children"/>
-        <mapping class = "AreaStreet"/>
-        <mapping class = "EducateBuilding"/>
+        <mapping class = "IObjectDAO"/>
+        <mapping class = "Clients"/>
+        <mapping class = "Employee"/>
+        <mapping class = "Estate"/>
         <mapping class = "User"/>
+        <mapping class = "Login"/>
         <mapping class = "Main"/>
     </session-factory>
 </hibernate-configuration>

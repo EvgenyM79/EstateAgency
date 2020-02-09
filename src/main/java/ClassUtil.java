@@ -4,10 +4,12 @@ import java.util.*;
 public class ClassUtil{
 
     public void startProject() throws SQLException, Exception {
-        /*try {
+        try {
             System.out.println("Создание структуры БД и занесение первоначальной информаци");
             ObjectDAO obj = new ObjectDAO();
-            Parents parent1 = new Parents("Иван", "Петров", 36);
+            Employee employee = new Employee("Иван", "Петров","Риэлтор","petrov", "petrov");
+            obj.save(employee);
+            /*Parents parent1 = new Parents("Иван", "Петров", 36);
             AreaStreet areaStreet = new AreaStreet("Куйбышева", "Октябрьский");
             Passport passport1 = new Passport("6403", 333234543, "Куйбышева", 57, 7, areaStreet);
             AreaStreet areaStreet2 = new AreaStreet("Первомайская", "Октябрьский");
@@ -109,9 +111,9 @@ public class ClassUtil{
             System.out.println(ch);
             System.out.println("Учебное заведение:");
             System.out.println(ch.getEducateBuilding());
-
+*/
         } catch (Exception e) {
             System.out.println("Ошибка работы с данных:");
-        }*/
+        }
     }
 }
